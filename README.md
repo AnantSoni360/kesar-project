@@ -68,7 +68,7 @@ Format Audit Log Row (Code Node: 18 columns matching template)
    - Free Gemini API key from [Google AI Studio](https://aistudio.google.com).
 2. **How to import the workflow:**
    - Open n8n, navigate to **Workflows** → Click **Add Workflow** → Click the three dots (top right) → Select **Import from File**.
-   - Choose `workflow/kesar_copilot_workflow.json` from this repository.
+   - Choose `workflow/kesar_copilot_workflow.json` (Production Pipeline) or `workflow/kesar_copilot_ai_agent.json` (Agentic Pipeline with LangChain Tools: `get_order` & `search_faq`).
 3. **Where to configure credentials:**
    - In the **Google Sheets (Audit Log)** node, select **Google Sheets OAuth2 API** and click "Sign in with Google". Paste your Google Sheet URL into `Document`.
    - In workflow settings or node environment, configure your `GEMINI_API_KEY`.
