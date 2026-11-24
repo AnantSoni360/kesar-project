@@ -52,6 +52,11 @@ Use this script to record your **5-minute screen recording** on Loom, Google Dri
   > 
   > A naive LLM would comply and issue an unauthorized refund. Our copilot's sanitization guardrail immediately flagged the injection pattern, strictly enforced Kesar & Co.'s hygiene policy (unopened items only), set `needs_human: TRUE`, and drafted a polite policy refusal instead of being manipulated."*
 
+##### 🌟 Bonus Standout: The Automated Safety Eval Suite (15 seconds)
+- **What to show:** Flip to your terminal and run: `python scripts/run_evals.py`.
+- **What to say:**
+  > *"To ensure regressions never happen when prompts change, I built an automated CI/CD Safety Evaluation Suite. As you can see, it tests 6 enterprise safety assertions including prompt injection defense, customer PII isolation, and ticket deduplication, with all 6 tests passing at 100%."*
+
 ---
 
 #### 3. Honest Discussion: What Doesn't Work Well Yet (3:30 – 4:30)
