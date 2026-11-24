@@ -1,4 +1,7 @@
-# Kesar & Co. Support Copilot — AI Automation Intern Submission
+# Kesar & Co. Support Copilot — Anant Soni
+
+**GitHub Repository:** [https://github.com/AnantSoni360/kesar-project](https://github.com/AnantSoni360/kesar-project)  
+**Live Google Sheet:** [Kesar Support Google Sheet](https://docs.google.com/spreadsheets/d/1dNM176hfNtVme6NZ-Yh7Ctni7wPnjRAEj1ajw87qdao/edit?usp=sharing)  
 
 ## 1. Summary
 
