@@ -6,7 +6,7 @@
 - **Platform and LLM used:** n8n Cloud (with exported blueprint), Google Gemini 1.5 Flash (via Google AI Studio, temperature 0.0 for deterministic classification, 0.2 for drafting), JavaScript deterministic logic nodes.
 - **Live Google Sheet Link:** [Kesar Support Google Sheet](https://docs.google.com/spreadsheets/d/1dNM176hfNtVme6NZ-Yh7Ctni7wPnjRAEj1ajw87qdao/edit?usp=sharing) (View access enabled)
 - **Time spent:** Approximately 5.5 hours across architecture design, prompt hardening, edge-case testing, and documentation.
-- **What works:** 100% schema-valid JSON extraction, zero-hallucination policy grounding in `faq.md`, automated prompt injection neutralization (email `E12`), customer email privacy protection (email `E07`), smart ticket deduplication (email `E04` & `E21`), Hinglish/Hindi recognition, and deterministic return window validation.
+- **What works:** 100% schema-valid JSON extraction, zero-hallucination policy grounding in `faq.md`, automated prompt injection neutralization (email `E12`), customer email privacy protection (email `E07`), smart ticket deduplication (email `E04` & `E21`), Hinglish/Hindi recognition, deterministic return window validation, and an automated 6-point CI/CD safety eval suite (`scripts/run_evals.py`).
 - **What doesn't:** Unidentified vague emails with zero metadata (`E18`) cannot be automatically matched to customer records and are escalated to human review.
 
 ---
@@ -72,13 +72,16 @@ Format Audit Log Row (Code Node: 18 columns matching template)
 3. **Where to configure credentials:**
    - In the **Google Sheets (Audit Log)** node, select **Google Sheets OAuth2 API** and click "Sign in with Google". Paste your Google Sheet URL into `Document`.
    - In workflow settings or node environment, configure your `GEMINI_API_KEY`.
-4. **How to run the 25 test emails:**
+4. **How to run the 25 test emails & safety evals:**
    ```bash
    # Test a small batch first
    python scripts/send_test_emails.py --url <YOUR_N8N_WEBHOOK_URL> --only E01,E02,E03
 
    # Run all 25 emails with 5-second delay
    python scripts/send_test_emails.py --url <YOUR_N8N_WEBHOOK_URL>
+
+   # Run automated CI/CD safety & policy evaluations suite
+   python scripts/run_evals.py
    ```
 
 ---
